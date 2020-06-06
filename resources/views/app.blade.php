@@ -9,8 +9,6 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="bg-gray-200 min-h-screen font-base">
-<div id="no-app">
-    @yield('content')
-</div>
+@inertia
 </body>
 </html>

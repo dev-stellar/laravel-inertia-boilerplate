@@ -21,5 +21,9 @@
         "tailwindcss": "^1.4.4",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "@inertiajs/inertia": "^0.1.9",
+        "@inertiajs/inertia-vue": "^0.1.4"
     }
 }

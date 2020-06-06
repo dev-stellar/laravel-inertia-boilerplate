@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
-
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <script src="{{ mix('js/app.js') }}" defer></script>
-</head>
-<body class="bg-gray-200 min-h-screen font-base">
-<div id="app">
-
+<template>
     <div class="flex flex-col md:flex-row">
 
         <base-sidebar></base-sidebar>
@@ -22,8 +10,7 @@
                            placeholder="Search.."/>
                 </div>
                 <div>
-                    <button class="mx-2 text-gray-700 focus:outline-none"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <button class="mx-2 text-gray-700 focus:outline-none" @click="logout">
                         <svg class="h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                              viewBox="0 0 24 24" stroke="currentColor">
                             <path
@@ -35,17 +22,21 @@
             <main>
                 <!-- Replace with your content -->
                 <div class="px-8 py-6">
-                    @yield('content')
+                    <slot></slot>
                 </div>
                 <!-- /End replace -->
             </main>
         </div>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            {{ csrf_field() }}
-        </form>
     </div>
+</template>
 
-
-</div>
-</body>
-</html>
+<script>
+    export default {
+        methods: {
+            logout() {
+                axios.post('logout')
+                    .then(() => location.reload());
+            }
+        }
+    }
+</script>
