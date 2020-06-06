@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6558f74828bca9ebecac73d90cea4b1a",
+    "content-hash": "64cfd9611d57cc08e108b0ee5897ded0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4144,6 +4144,110 @@
             "time": "2016-01-20T08:20:44+00:00"
         },
         {
+            "name": "laravel/ui",
+            "version": "v2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/ui.git",
+                "reference": "15368c5328efb7ce94f35ca750acde9b496ab1b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/15368c5328efb7ce94f35ca750acde9b496ab1b1",
+                "reference": "15368c5328efb7ce94f35ca750acde9b496ab1b1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^7.0",
+                "illuminate/filesystem": "^7.0",
+                "illuminate/support": "^7.0",
+                "php": "^7.2.5"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Ui\\UiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Ui\\": "src/",
+                    "Illuminate\\Foundation\\Auth\\": "auth-backend/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel UI utilities and presets.",
+            "keywords": [
+                "laravel",
+                "ui"
+            ],
+            "time": "2020-04-29T15:06:45+00:00"
+        },
+        {
+            "name": "miaababikir/laravel-tailwind-dashboard-preset",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Miaababikir/Laravel-Tailwind-CSS-Dashboard-Preset.git",
+                "reference": "08c763d46c4a5300055f671fe930f60c9c3c8cdc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Miaababikir/Laravel-Tailwind-CSS-Dashboard-Preset/zipball/08c763d46c4a5300055f671fe930f60c9c3c8cdc",
+                "reference": "08c763d46c4a5300055f671fe930f60c9c3c8cdc",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0",
+                "laravel/ui": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Miaababikir\\TailwindCssDashboardPreset\\TailwindCssDashboardPresetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Miaababikir\\TailwindCssDashboardPreset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mosab Ibrahim",
+                    "email": "miaababikir@gmail.com"
+                }
+            ],
+            "description": "Laravel tailwind css dashboard preset",
+            "keywords": [
+                "laravel",
+                "preset",
+                "tailwindcss"
+            ],
+            "time": "2020-06-03T23:20:44+00:00"
+        },
+        {
             "name": "mockery/mockery",
             "version": "1.4.0",
             "source": {
@@ -5752,7 +5856,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "miaababikir/laravel-tailwind-dashboard-preset": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
