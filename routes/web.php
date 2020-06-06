@@ -23,4 +23,8 @@ Auth::routes(['register' => false, 'confirm' => false, 'reset' => false]);
 Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::get('/', 'DashboardController@index');
     Route::get('/ui', 'DashboardController@ui');
+
+    Route::post('/users', 'UserController@store');
+    Route::put('/users/{user}', 'UserController@update');
+    Route::delete('/users/{user}', 'UserController@destroy');
 });
