@@ -10,4 +10,9 @@ class DashboardController extends Controller
     {
         return inertia()->render('Dashboard/Index');
     }
+
+    public function ui()
+    {
+        return inertia()->render('Dashboard/UI');
+    }
 }
