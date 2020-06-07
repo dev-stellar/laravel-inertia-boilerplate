@@ -12,6 +12,12 @@ Vue.use(InertiaApp)
 
 Vue.prototype.$route = (...args) => route(...args).url();
 
+Vue.mixin({
+    methods: {
+        route: route
+    }
+});
+
 const app = document.getElementById('app')
 
 if (app) {

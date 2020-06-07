@@ -20,7 +20,7 @@
         </div>
         <div class="px-2 py-6 md:block" :class="isOpen? 'block': 'hidden'">
             <ul>
-                <li class="px-2 py-3 bg-gray-900 rounded">
+                <li class="px-2 py-3 hover:bg-gray-900 rounded" :class="route().current('dashboard.index')? 'bg-gray-900' : ''">
                     <inertia-link href="/dashboard" class="flex items-center">
                         <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round"
                              stroke-linejoin="round"
@@ -32,7 +32,7 @@
                         <span class="mx-2 text-gray-300">Dashboard</span>
                     </inertia-link>
                 </li>
-                <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2">
+                <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2" :class="route().current('users.*')? 'bg-gray-900' : ''">
                     <inertia-link href="/dashboard/users" class="flex items-center">
                         <svg class="w-6 text-gray-500" fill="none" stroke-linecap="round"
                              stroke-linejoin="round"
