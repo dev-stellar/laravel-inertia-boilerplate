@@ -9,9 +9,15 @@
             <base-panel class="md:max-w-3xl mt-4">
                 <form @submit.prevent="submit">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <base-input label="Name" required v-model="form.name"></base-input>
-                        <base-input type="email" label="Email address" required v-model="form.email"></base-input>
-                        <base-input label="Password" type="password" required v-model="form.password"></base-input>
+                        <div>
+                            <base-input label="Name" required v-model="form.name" :error="$page.errors.name"></base-input>
+                        </div>
+                        <div>
+                            <base-input type="email" label="Email address" required v-model="form.email" :error="$page.errors.email"></base-input>
+                        </div>
+                        <div>
+                            <base-input label="Password" type="password" required v-model="form.password" :error="$page.errors.password"></base-input>
+                        </div>
                         <base-input label="Password confirmation" type="password" required v-model="form.password_confirmation"></base-input>
                     </div>
                     <div class="flex justify-end mt-4">

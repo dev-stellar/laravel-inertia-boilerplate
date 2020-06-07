@@ -2387,6 +2387,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2635,6 +2641,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "BaseInput",
   props: {
@@ -2643,6 +2650,7 @@ __webpack_require__.r(__webpack_exports__);
     label: String,
     placeholder: String,
     required: String,
+    error: null,
     type: {
       type: String,
       "default": 'text'
@@ -5122,46 +5130,70 @@ var render = function() {
                 "div",
                 { staticClass: "grid grid-cols-1 sm:grid-cols-2 gap-6" },
                 [
-                  _c("base-input", {
-                    attrs: { label: "Name", required: "" },
-                    model: {
-                      value: _vm.form.name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.form, "name", $$v)
-                      },
-                      expression: "form.name"
-                    }
-                  }),
+                  _c(
+                    "div",
+                    [
+                      _c("base-input", {
+                        attrs: {
+                          label: "Name",
+                          required: "",
+                          error: _vm.$page.errors.name
+                        },
+                        model: {
+                          value: _vm.form.name,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "name", $$v)
+                          },
+                          expression: "form.name"
+                        }
+                      })
+                    ],
+                    1
+                  ),
                   _vm._v(" "),
-                  _c("base-input", {
-                    attrs: {
-                      type: "email",
-                      label: "Email address",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.form.email,
-                      callback: function($$v) {
-                        _vm.$set(_vm.form, "email", $$v)
-                      },
-                      expression: "form.email"
-                    }
-                  }),
+                  _c(
+                    "div",
+                    [
+                      _c("base-input", {
+                        attrs: {
+                          type: "email",
+                          label: "Email address",
+                          required: "",
+                          error: _vm.$page.errors.email
+                        },
+                        model: {
+                          value: _vm.form.email,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "email", $$v)
+                          },
+                          expression: "form.email"
+                        }
+                      })
+                    ],
+                    1
+                  ),
                   _vm._v(" "),
-                  _c("base-input", {
-                    attrs: {
-                      label: "Password",
-                      type: "password",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.form.password,
-                      callback: function($$v) {
-                        _vm.$set(_vm.form, "password", $$v)
-                      },
-                      expression: "form.password"
-                    }
-                  }),
+                  _c(
+                    "div",
+                    [
+                      _c("base-input", {
+                        attrs: {
+                          label: "Password",
+                          type: "password",
+                          required: "",
+                          error: _vm.$page.errors.password
+                        },
+                        model: {
+                          value: _vm.form.password,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "password", $$v)
+                          },
+                          expression: "form.password"
+                        }
+                      })
+                    ],
+                    1
+                  ),
                   _vm._v(" "),
                   _c("base-input", {
                     attrs: {
@@ -5640,7 +5672,13 @@ var render = function() {
           return _vm.$emit("input", $event.target.value)
         }
       }
-    })
+    }),
+    _vm._v(" "),
+    _vm.error
+      ? _c("span", { staticClass: "text-red-500 text-xs mt-4" }, [
+          _vm._v(_vm._s(_vm.error[0]))
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []

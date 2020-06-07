@@ -12,6 +12,7 @@
                :placeholder="placeholder"
                :required="required"
         >
+        <span class="text-red-500 text-xs mt-4" v-if="error">{{ error[0] }}</span>
     </label>
 </template>
 
@@ -24,6 +25,7 @@
             label: String,
             placeholder: String,
             required: String,
+            error: null,
             type: {
                 type: String,
                 default: 'text',
