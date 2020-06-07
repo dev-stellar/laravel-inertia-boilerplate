@@ -13,15 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', fn() => redirect()->route('dashboard.index'));
 
 Auth::routes(['register' => false, 'confirm' => false, 'reset' => false]);
 
 
 Route::middleware('auth')->prefix('/dashboard')->group(function () {
-    Route::get('/', 'DashboardController@index');
+    Route::get('/', 'DashboardController@index')->name('dashboard.index');
     Route::get('/ui', 'DashboardController@ui');
 
     Route::get('/users', 'UserController@index')->name('users.index');
