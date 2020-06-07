@@ -37,6 +37,11 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        session()->flash('toast', [
+            'type' => 'success',
+            'message' => 'User created successfully'
+        ]);
+
         return redirect()->route('users.index');
 
     }
@@ -50,7 +55,7 @@ class UserController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users,' . $user->id,
+            'email' => 'required|email|unique:users,email' . $user->id,
             'password' => 'sometimes|min:8|confirmed'
         ]);
 
@@ -59,6 +64,14 @@ class UserController extends Controller
         }
 
         $user->update($data);
+
+        session()->flash('toast', [
+            'type' => 'success',
+            'message' => 'User updated successfully'
+        ]);
+
+        return redirect()->route('users.index');
+
     }
 
     public function destroy(User $user)

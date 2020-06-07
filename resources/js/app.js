@@ -14,6 +14,11 @@ const app = document.getElementById('app')
 
 if (app) {
     new Vue({
+        mounted() {
+            window.addEventListener('popstate', () => {
+                this.$page.popstate = true;
+            })
+        },
         render: h => h(InertiaApp, {
             props: {
                 initialPage: JSON.parse(app.dataset.page),

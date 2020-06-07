@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col md:flex-row">
+    <div class="flex flex-col md:flex-row relative overflow-hidden">
 
         <base-sidebar></base-sidebar>
 
@@ -27,11 +27,15 @@
                 <!-- /End replace -->
             </main>
         </div>
+
+        <flash v-if="$page.flash" :type="$page.flash.type" :popstate="$page.popstate">{{ $page.flash.message}}</flash>
     </div>
 </template>
 
 <script>
+    import Flash from "../components/UI/Flash";
     export default {
+        components: {Flash},
         methods: {
             logout() {
                 axios.post('logout')
