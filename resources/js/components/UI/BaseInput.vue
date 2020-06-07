@@ -4,9 +4,10 @@
               v-if="label"
               v-text="label"
         ></span>
-        <input class="form-input bg-gray-200 border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full"
+        <input class="form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full"
                :type="type"
                :value="value"
+               :name="name"
                @input="$emit('input', $event.target.value)"
                :placeholder="placeholder"
                :required="required"
@@ -19,6 +20,7 @@
         name: "BaseInput",
         props: {
             value: null,
+            name: String,
             label: String,
             placeholder: String,
             required: String,

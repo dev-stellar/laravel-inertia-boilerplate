@@ -6,10 +6,23 @@ use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use function MongoDB\BSON\toJSON;
 
 class UserTest extends TestCase
 {
     use RefreshDatabase;
+
+    /**
+    * @test
+    */
+    public function can_get_users_list()
+    {
+        $this->login();
+
+        $this->get('/dashboard/users')
+            ->assertHasProp('users')
+            ->assertPropCount('users', 1);
+    }
 
     /**
      * @test

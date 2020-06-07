@@ -8,6 +8,21 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+
+    public function index()
+    {
+        $users = User::all();
+
+        return inertia()->render('Dashboard/users/index', [
+            'users' => $users
+        ]);
+    }
+
+    public function create()
+    {
+        return inertia()->render('Dashboard/users/create');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -22,6 +37,13 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        return redirect()->route('users.index');
+
+    }
+
+    public function edit(User $user)
+    {
+        return inertia()->render('Dashboard/users/edit', ['user' => $user]);
     }
 
     public function update(Request $request, User $user)

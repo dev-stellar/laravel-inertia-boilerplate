@@ -24,7 +24,10 @@ Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::get('/', 'DashboardController@index');
     Route::get('/ui', 'DashboardController@ui');
 
+    Route::get('/users', 'UserController@index')->name('users.index');
+    Route::get('/users/create', 'UserController@create');
     Route::post('/users', 'UserController@store');
+    Route::get('/users/{user}/edit', 'UserController@edit');
     Route::put('/users/{user}', 'UserController@update');
     Route::delete('/users/{user}', 'UserController@destroy');
 });
