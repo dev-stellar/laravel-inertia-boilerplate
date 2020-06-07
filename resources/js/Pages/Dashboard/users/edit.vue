@@ -9,8 +9,8 @@
             <base-panel class="md:max-w-3xl mt-4">
                 <form @submit.prevent="submit">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <base-input label="Name" required v-model="form.name" :error="$page.errors.name"></base-input>
-                        <base-input type="email" label="Email address" required v-model="form.email" :error="$page.errors.email"></base-input>
+                        <base-input label="Name" name="name" v-model="form.name" :error="$page.errors.name" required></base-input>
+                        <base-input type="email" label="Email address" name="email" v-model="form.email" :error="$page.errors.email" required></base-input>
                         <base-input label="Password" type="password" v-model="form.password" :error="$page.errors.password"></base-input>
                         <base-input label="Password confirmation" type="password"
                                     v-model="form.password_confirmation"></base-input>
@@ -50,7 +50,7 @@
         },
         methods: {
             submit() {
-                this.$inertia.post('/dashboard/users', this.form);
+                this.$inertia.put(this.$route('users.update', this.user.id), this.form);
             }
         }
     }

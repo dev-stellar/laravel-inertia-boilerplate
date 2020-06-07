@@ -111,7 +111,7 @@
         },
         methods: {
             logout() {
-                axios.post('logout')
+                axios.post('/logout')
                     .then(() => location.reload());
             }
         }

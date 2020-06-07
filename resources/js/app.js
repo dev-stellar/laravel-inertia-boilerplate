@@ -10,6 +10,8 @@ Vue.component('base-sidebar', require('./components/UI/BaseSidebar').default);
 
 Vue.use(InertiaApp)
 
+Vue.prototype.$route = (...args) => route(...args).url();
+
 const app = document.getElementById('app')
 
 if (app) {
