@@ -21,7 +21,7 @@
                         <base-input label="Password confirmation" type="password" v-model="form.password_confirmation" required></base-input>
                     </div>
                     <div class="flex justify-end mt-4">
-                        <button type="submit" class="px-3 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded">Create User</button>
+                        <base-button primary>Create user</base-button>
                     </div>
                 </form>
             </base-panel>

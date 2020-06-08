@@ -16,10 +16,7 @@
                                     v-model="form.password_confirmation"></base-input>
                     </div>
                     <div class="flex justify-end mt-4">
-                        <button type="submit"
-                                class="px-3 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded">
-                            Update User
-                        </button>
+                        <base-button primary>Update user</base-button>
                     </div>
                 </form>
             </base-panel>

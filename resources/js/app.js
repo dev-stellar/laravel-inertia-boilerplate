@@ -4,9 +4,10 @@ import {InertiaApp} from '@inertiajs/inertia-vue'
 import Vue from 'vue'
 
 Vue.component('base-nav', require('./components/UI/BaseNav').default);
-Vue.component('base-panel', require('./components/UI/BasePanel').default);
-Vue.component('base-input', require('./components/UI/BaseInput').default);
 Vue.component('base-sidebar', require('./components/UI/BaseSidebar').default);
+Vue.component('base-panel', require('./components/UI/BasePanel').default);
+Vue.component('base-button', require('./components/UI/BaseButton').default);
+Vue.component('base-input', require('./components/UI/BaseInput').default);
 
 Vue.use(InertiaApp)
 

@@ -6,7 +6,7 @@
                 <h2 class="text-3xl text-gray-700 font-bold">Users</h2>
                 <div>
                     <inertia-link href="/dashboard/users/create"
-                                  class="px-3 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded">
+                                  class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded">
                         Create User
                     </inertia-link>
                 </div>
